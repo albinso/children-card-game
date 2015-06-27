@@ -1,4 +1,4 @@
-public class Minion {
+public class Minion implements Displayable {
 	private String name;
 
 	private int normalAttack;
@@ -138,5 +138,9 @@ public class Minion {
 
 	public boolean hasWindfury() {
 		return windfury;
+	}
+
+	public String getVisRep() {
+		return getName() + "\n\nA: " + getCurrentAttack() + "\tH: " + getCurrentHealth();
 	}
 }

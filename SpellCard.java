@@ -54,4 +54,8 @@ public class SpellCard extends PlayCard {
 	public SpellEffect getSpellEffect() {
 		return spellEffect;
 	}
+
+	public String getVisRep() {
+		return getName();
+	}
 }

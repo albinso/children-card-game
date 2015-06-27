@@ -4,11 +4,11 @@ import java.util.Scanner;
 public class TheGame {
 	private final int TARGETPLAYER = 10;
 
-	private LinkedList<Minion> minionsOnBoard1;
-	private LinkedList<Minion> minionsOnBoard2;
+	public LinkedList<Minion> minionsOnBoard1;
+	public LinkedList<Minion> minionsOnBoard2;
 
-	private LinkedList<PlayCard> cardsInHand1;
-	private LinkedList<PlayCard> cardsInHand2;
+	public LinkedList<PlayCard> cardsInHand1;
+	public LinkedList<PlayCard> cardsInHand2;
 
 	private int turn;
 	private int playerHealth1;
@@ -27,7 +27,7 @@ public class TheGame {
 		playerHealth1 = 30;
 		playerHealth2 = 30;
 
-		start();
+		//start();
 	}
 
 	public void start() {
@@ -527,4 +527,6 @@ public class TheGame {
 	public static void main(String[] args) {
 		new TheGame();
 	}
+
+
 }

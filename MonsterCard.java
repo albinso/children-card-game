@@ -45,4 +45,8 @@ public class MonsterCard extends PlayCard {
 	public Minion toMinion() {
 		return new Minion(name, attack, health, false, false, false, false);
 	}
+
+	public String getVisRep() {
+		return getName() + "\n\nA: " + getAttack() + "\tH: " + getHealth();
+	}
 }

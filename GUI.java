@@ -98,6 +98,9 @@ public class GUI extends JPanel implements KeyListener {
 
 	public void keyPressed(KeyEvent e) {
 		if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+			game.handleCommand("end turn");
+		}
+		if(e.getKeyCode() == KeyEvent.VK_D) {
 			game.handleCommand("draw");
 		}
 		update();

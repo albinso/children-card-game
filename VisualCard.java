@@ -34,7 +34,7 @@ class VisualCard extends JPanel implements MouseListener {
 		if(this.card != null) {
 			//System.out.println("Painting card");
 			Font f = g.getFont();
-			f = scaleFontToFit(this.card.getVisRep(), this.getWidth()-4, g, f);
+			f = scaleFontToFit(this.card.getVisRep().split("\n")[0], this.getWidth()-4, g, f);
 			g.setFont(f);
 			drawString(g, this.card.getVisRep(), 3, 20);
 		}

@@ -141,6 +141,10 @@ public class Minion implements Displayable {
 	}
 
 	public String getVisRep() {
-		return getName() + "\n\nA: " + getCurrentAttack() + "\tH: " + getCurrentHealth();
+		String t = hasTaunt() ? "T" : "";
+		String c = hasCharge() ? "C" : "";
+		String ds = hasDivineShield() ? "D" : "";
+		String w = hasWindfury() ? "W" : "";
+		return getName() + "\n\nA: " + getCurrentAttack() + "\tH: " + getCurrentHealth() + "\n" + t + c + ds + w;
 	}
 }

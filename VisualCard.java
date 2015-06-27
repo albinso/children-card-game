@@ -32,7 +32,7 @@ class VisualCard extends JPanel implements MouseListener {
 
 		g.drawRect(0, 0, this.getWidth(), this.getHeight());
 		if(this.card != null) {
-			System.out.println("Painting card");
+			//System.out.println("Painting card");
 			Font f = g.getFont();
 			f = scaleFontToFit(this.card.getVisRep(), this.getWidth()-4, g, f);
 			g.setFont(f);
@@ -48,6 +48,10 @@ class VisualCard extends JPanel implements MouseListener {
 		return x;
 	}
 
+	/*
+	 * Scales the font to fit within a single line with the given width.
+	 * Typ Newton-Raphson #numme
+	 */
 	public static Font scaleFontToFit(String text, int width, Graphics g, Font pFont)
 	{
 	    float fontSize = pFont.getSize();

@@ -39,10 +39,14 @@ public class GUI extends JPanel implements KeyListener {
 
 
 	public void paintComponent(Graphics g) {
-		System.out.println("Drawing GUI");
+		//System.out.println("Drawing GUI");
 		super.paintComponent(g);
 	}
 
+	/*
+	 * Creates a command and executes it.
+	 * Resets selections.
+	 */
 	public void execute() {
 		String comm = toCommand();
 		game.handleCommand(comm);
@@ -51,6 +55,9 @@ public class GUI extends JPanel implements KeyListener {
 		update();
 	}
 
+	/*
+	 * Updates content of VisualCard containers to match the game state.
+	 */
 	public void update() {
 		for(int i=0; i < 4*5; i++) {
 			((VisualCard)(this.getComponent(i))).setCard(null);
@@ -70,9 +77,15 @@ public class GUI extends JPanel implements KeyListener {
 		repaint();
 	}
 
+	/*
+	 * Interprets the selections and produces a String that can be parsed by hadeCommand.
+	 */
 	public String toCommand() {
 		if(selected1.getCard() instanceof MonsterCard) {
 			return "play #" + selected1.getCol();
+		}
+		if(selected1.getCard() instanceof SpellCard && ((SpellCard)(selected1.getCard())).getSpellEffect() instanceof BuffSingleMinion) {
+			return "cast #" + selected1.getCol() + " on #" + selected2.getCol();
 		}
 		if(selected1.getCard() instanceof SpellCard) {
 			return "cast #" + selected1.getCol();
